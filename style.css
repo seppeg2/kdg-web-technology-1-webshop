@@ -1,1 +1,21 @@
-/* CSS */
+/*
+Project: KDG Web Technology 1 Project Webwinkel
+Description: Een project voor het examen van periode 1
+Author: Seppe Gadeyne
+Author URI: https://www.linkedin.com/in/seppegadeyne/
+Version: 1.0
+*/
+
+/* Font layout */
+
+body {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
