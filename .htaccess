@@ -1,5 +1,5 @@
 # Force SSL
-# See live version at https://kdg.straffesites.be
+# See live version at https://seppe.gadeyne.webtechnology.be
 RewriteEngine On
 RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
