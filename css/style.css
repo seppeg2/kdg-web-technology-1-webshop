@@ -11,16 +11,55 @@ Website mag maximum 10MB zijn gezipt
 Favicon toevoegen
 */
 
-/* Lettertypen */
-/* ----------- */
-
 /* Algemeen */
+/* -------- */
 body {
+    margin: 0px;
     font-family: "proxima-nova", sans-serif;
     font-weight: 300;
     font-style: normal;
     color: #333333;
 }
+
+
+/* Header */
+/* ------ */
+#header {
+    height: 50px;
+    padding: 10px;
+    background: limegreen;
+    overflow: hidden;
+}
+
+#header .logo {
+    display: inline-block;
+    margin: 5px 0px;
+    height: 40px;
+    width: 228px;
+    text-indent: -9999px;
+    background: url('../media/fitbit-logo.svg') no-repeat;
+}
+
+#header #navigation nav {
+    display: inline-block;
+    float: left;
+}
+
+#header #navigation h2, h3 {
+    display: none;
+}
+
+#header #navigation ul {
+    display: inline-block;
+}
+
+#header #navigation ul li {
+    float: left;
+}
+
+
+/* Lettertypen */
+/* ----------- */
 
 /* Headlines */
 h1, h2, h3, h4, h5, h6 {
@@ -30,12 +69,13 @@ h1, h2, h3, h4, h5, h6 {
     color: #222222;
 }
 
+
+
 /* Links */
 
 
 
-/* Header */
-/* ------ */
+
 
 /* Navigation */
 
