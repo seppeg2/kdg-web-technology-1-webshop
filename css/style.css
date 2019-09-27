@@ -128,12 +128,13 @@ body {
 #header #billboard h2 {
     font-size: 46px;
     font-weight: 300;
-    margin: 0px;
+    margin-bottom: -15px;
 }
 
 #header #billboard p {
     font-size: 18px;
     font-weight: 500;
+    margin-bottom: 25px;
 }
 
 
