@@ -52,7 +52,7 @@ body {
     #header #billboard {
         padding: 100px 0px 0px 4%;
         height: 320px;
-        background: #eadfdd url("../media/versa2-fall-2019-bg-o65.jpg") no-repeat center;
+        background: #eadfdd url("../media/versa2-fall-2019-bg-mobile.jpg") no-repeat center;
     }
 }
 @media (min-width: 576px) {
