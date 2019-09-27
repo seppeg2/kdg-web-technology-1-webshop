@@ -128,7 +128,7 @@ body {
 #header #billboard h2 {
     font-size: 46px;
     font-weight: 300;
-    margin-bottom: -15px;
+    margin: 0px 0px -15px 0px;
 }
 
 #header #billboard p {
