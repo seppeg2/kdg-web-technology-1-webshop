@@ -48,6 +48,12 @@ body {
         padding: 10px;
         margin: 0px;
     }
+
+    #header #billboard {
+        padding: 100px 0px 0px 4%;
+        height: 320px;
+        background: #eadfdd url("../media/versa2-fall-2019-bg-o65.jpg") no-repeat center;
+    }
 }
 @media (min-width: 576px) {
     #header.grid-container {
@@ -71,6 +77,9 @@ body {
     #header #billboard {
         grid-column-start: 1;
         grid-column-end: 3;
+        padding: 100px 0px 0px 4%;
+        height: 320px;
+        background: #eadfdd url("../media/versa2-fall-2019-bg.jpg") no-repeat center;
     }
 }
 
@@ -109,12 +118,6 @@ body {
 
 #header #navigation a.active {
     color: #0099cc;
-}
-
-#header #billboard {
-    padding: 100px 0px 0px 4%;
-    height: 320px;
-    background: #eadfdd url("../media/versa2-fall-2019-bg.jpg") no-repeat center;
 }
 
 #header #billboard h2,
