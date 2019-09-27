@@ -31,6 +31,10 @@ body {
         grid-template-columns: auto;
     }
 
+    #header #navigation {
+        text-align: center;
+    }
+
     #header #navigation ul li {
         display: inline-block;
         padding: 10px;
@@ -58,7 +62,6 @@ body {
         grid-column-end: 3;
     }
 }
-
 
 #header #logo {
     text-indent: -9999px;
