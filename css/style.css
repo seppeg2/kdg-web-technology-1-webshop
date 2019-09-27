@@ -16,6 +16,7 @@ Favicon toevoegen
 body {
     margin: 0px;
     font-family: "proxima-nova", sans-serif;
+    font-size: 16px;
     font-weight: 300;
     font-style: normal;
     color: #333333;
@@ -24,39 +25,104 @@ body {
 
 /* Header */
 /* ------ */
-#header {
-    height: 50px;
-    padding: 10px;
-    background: limegreen;
-    overflow: visible;
+@media (max-width: 575px) {
+    #header.grid-container {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    #header #navigation ul li {
+        display: inline-block;
+        padding: 15px;
+        margin: 0px;
+    }
+}
+@media (min-width: 576px) {
+    #header.grid-container {
+        display: grid;
+        grid-template-columns: 228px auto;
+    }
+
+    #header #logo {
+        margin: 0px;
+    }
+
+    #header #navigation ul li {
+        display: inline-block;
+        padding: 15px;
+        margin: 0px 15px 0px 15px;
+    }
+
+    #header #billboard {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 }
 
-#header .logo {
-    display: inline-block;
-    margin: 5px 0px;
-    height: 40px;
-    width: 228px;
+
+#header #logo {
     text-indent: -9999px;
-    background: url('../media/fitbit-logo.svg') no-repeat;
+    background: url('../media/fitbit-logo.svg') no-repeat center;
+    background-size: 114px 60px;
 }
 
-#header #navigation nav {
-    display: inline-block;
-    float: left;
+#header #navigation {
+    margin: 15px 0px 0px 0px;
 }
-
 #header #navigation h2, h3 {
     display: none;
 }
 
 #header #navigation ul {
+    overflow: auto;
     list-style: none;
-    background: aquamarine;
+    margin: 0px;
+    padding: 0px 0px 0px 15px;
 }
 
-#header #navigation ul li {
-    display: inline-block;
-    padding: 10px;
+#header #navigation ul li:hover {
+    border-bottom: 2px solid #0099cc;
+}
+
+#header #navigation ul li.active {
+    border-bottom: 2px solid #0099cc;
+}
+
+#header #navigation a {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #999999;
+}
+
+#header #navigation a:hover {
+    text-decoration: none;
+    color: #0099cc;
+}
+
+#header #navigation a.active {
+    color: #0099cc;
+}
+
+#header #billboard {
+    padding: 100px 0px 0px 4%;
+    height: 320px;
+    background: #eadfdd url("../media/versa2-fall-2019-bg.jpg") no-repeat center;
+}
+
+#header #billboard h2,
+#header #billboard p {
+    max-width: 315px;
+}
+
+#header #billboard h2 {
+    font-size: 46px;
+    font-weight: 300;
+    margin: 0px;
+}
+
+#header #billboard p {
+    font-size: 18px;
 }
 
 
@@ -72,14 +138,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* Buttons */
+/* ------- */
+input[type="submit"],
+.button {
+    font-size: 14px;
+    color: #ffffff;
+    background: #002a3a;
+    text-transform: uppercase;
+    border-radius: 25px;
+    border: 3px solid #002a3a;
+    padding: 8px 25px 8px 25px;
+    cursor: pointer;
+}
 
-/* Links */
+input[type="submit"]:hover,
+.button:hover {
+    color: #333333;
+    background: transparent;
+}
 
-
-
-
-
-/* Navigation */
 
 
 
