@@ -31,6 +31,14 @@ body {
         grid-template-columns: auto;
     }
 
+    #header #logo {
+        margin-top: 25px;
+        margin-bottom: 0px;
+        text-indent: -9999px;
+        background: url('../media/fitbit-logo.svg') no-repeat center;
+        background-size: 140px;
+    }
+
     #header #navigation {
         text-align: center;
     }
@@ -49,6 +57,9 @@ body {
 
     #header #logo {
         margin: 0px;
+        text-indent: -9999px;
+        background: url('../media/fitbit-logo.svg') no-repeat center;
+        background-size: 114px;
     }
 
     #header #navigation ul li {
@@ -61,12 +72,6 @@ body {
         grid-column-start: 1;
         grid-column-end: 3;
     }
-}
-
-#header #logo {
-    text-indent: -9999px;
-    background: url('../media/fitbit-logo.svg') no-repeat center;
-    background-size: 114px 60px;
 }
 
 #header #navigation {
