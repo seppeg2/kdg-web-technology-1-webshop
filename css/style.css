@@ -8,7 +8,6 @@ Versie: 1.0
 
 /*
 Website mag maximum 10MB zijn gezipt
-Favicon toevoegen
 */
 
 /* Algemeen */
@@ -34,7 +33,7 @@ body {
 }
 
 
-/* Header */
+/* Titels */
 /* ------ */
 @media (max-width: 575px) {
     #header.grid-container {
@@ -162,7 +161,7 @@ body {
 /* Lettertypen */
 /* ----------- */
 
-/* Headlines */
+/* Titels */
 h1, h2, h3, h4, h5, h6 {
     font-family: "proxima-nova", sans-serif;
     font-weight: 700;
@@ -171,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* Buttons */
+/* Knoppen */
 /* ------- */
 input[type="submit"],
 .button {
@@ -181,7 +180,7 @@ input[type="submit"],
     text-transform: uppercase;
     border-radius: 25px;
     border: 3px solid #002a3a;
-    padding: 8px 25px 8px 25px;
+    padding: 8px 25px;
     cursor: pointer;
 }
 
@@ -190,8 +189,6 @@ input[type="submit"]:hover,
     color: #333333;
     background: transparent;
 }
-
-
 
 
 /* Footer */
