@@ -10,57 +10,101 @@ Versie: 1.0
 Website mag maximum 10MB zijn gezipt
 Gebruik voor de FAQ DL / DT / DD / DFN
 Meta title en meta description gebruiken
-CSS comments gebruiken
 Lineaire achtergrond gebruiken = radial gradient
 Formulier posten op html met GET methode
 */
 
+/* --------------------- */
 /* Algemene instellingen */
 /* --------------------- */
+
+/* Globale instellingen tekst en scherm */
 html, body {
     font-family: Helvetica, Arial, sans-serif;
     color: #333333;
     margin: 0;
     min-height: 100vh; 
 }
-
+/* Standaard onderlijning links uitzetten */
 a {
     text-decoration: none;
 }
 
+/* Titels algemene instellingen */
+/* ---------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    color: #333333;
+}
+
+/* Knoppen */
+/* ------- */
+input[type="submit"],
+.button {
+    font-size: 0.9em;
+    color: #ffffff;
+    background: #0099cc;
+    text-transform: uppercase;
+    border-radius: 0;
+    border-bottom: 3px solid #007399;
+    padding: 0.6em 1.4em;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+.button:hover {
+    background: #007399;
+}
+
+/* Helpers */
+/* ------- */
+.hide {
+    position: absolute;
+    width: 1px;
+    height: 1px; 
+    overflow: hidden;
+    left: -10000px;
+}
+
+
 /* ---------------------------------------------------------- */
 /* Hoofd lay-out van de pagina gebruik makend van Grid Layout */
 /* ---------------------------------------------------------- */
+
+/* Hoofd lay-out declaratie van de hoogte van de rijen navigatie, billboard, pagina en footer */
 body {
     display: grid; 
-    /* Hoofd lay-out declaratie van de hoogte van de rijen navigatie, billboard, pagina en footer */
     grid-template-rows: 75px 400px 1fr 200px;
 }
+/* Hoofd lay-out van de geneste Grid Layout, de kolom instellingen */
 header,
 main,
 footer {
     display: grid;
-    /* Hoofd lay-out van de geneste Grid Layout voor de kolom instellingen */
     grid-template-columns: 5vw minmax(min-content, 1200px) minmax(10vw, 1fr);
 }
+/* Links en rechts van de gebieden met content is een witspatie */
 header section,
 footer section,
 main article {
     grid-column-start: 2;
     grid-column-end: 3;
 }
+/* Indien toegepast op een section of article is heel de breedte beschikbaar voor content */
 .hero {
+    text-align: center;
     grid-column-start: 1;
     grid-column-end: 4;
 }
 
-/* ----------------------------------------- */
-/* Header omvat logo, navigatie en billboard */
-/* ----------------------------------------- */
+
+/* --------------------------------------------------- */
+/* Header omvat promotie, logo, navigatie en billboard */
+/* --------------------------------------------------- */
 
 /* Opmaak Grid lay-out voor de navigatie  */
 /* -------------------------------------- */
-header:nth-of-type(1) section:nth-of-type(1) {
+.navigation section {
     grid-column-start: 2;
     grid-column-end: 4;
 
@@ -68,9 +112,9 @@ header:nth-of-type(1) section:nth-of-type(1) {
     grid-template-columns: 200px 1fr 75px;
 }
 /* Uitlijning logo, navigatie en winkelmand */
-header:nth-of-type(1) section:nth-of-type(1) a, 
-header:nth-of-type(1) section:nth-of-type(1) nav,
-header:nth-of-type(1) section:nth-of-type(1) .shopping-cart {
+.navigation section a, 
+.navigation section nav,
+.navigation section .shopping-cart {
     align-self: center;
 }
 
@@ -114,7 +158,9 @@ header:nth-of-type(1) section:nth-of-type(1) .shopping-cart {
     color: #0099cc;
     border-bottom: 2px solid #0099cc;
 }
-/* Opmaak van het submenu welke volledige breedte omvat */
+
+/* Opmaak van het submenu welke volledige breedte omvat met Flexbox */
+/* ---------------------------------------------------------------- */
 /* Submenu verbergen */
 .menu > li > ul {
     display: none;
@@ -175,6 +221,7 @@ header:nth-of-type(1) section:nth-of-type(1) .shopping-cart {
 }
 /* Titels van de categorieën in het submenu */
 .menu h4 {
+    font-weight: 600;
     margin: 0 0 1.2em 0; 
     text-transform: uppercase;
     font-size: 0.90em;
@@ -192,153 +239,28 @@ header:nth-of-type(1) section:nth-of-type(1) .shopping-cart {
     color: #0099cc;
 }
 
-/* Billboard */
-/* --------- */
-header:nth-of-type(2) {
+/* Hero billboard */
+/* -------------- */
+/* Billbaord over heel de breedte van het scherm, bewust gekozen om dit in een aparte header te zetten. Gemakkelijker los te koppelen op pagina's waar het niet nodig is.  */
+.billboard {
     background: #eadfdd url("../media/versa2-fall-2019-bg.jpg") no-repeat center;
     box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
 }
-
-header:nth-of-type(2) section:nth-of-type(1) {
+/* Lay-out call to action van het billboard */
+.billboard section {
     align-self: center;
-    background: transparent;
-}
-
-
-
-
-
-
-
-/* Titels */
-/* ------ */
-@media (max-width: 575px) {
-    #header #navigation {
-        text-align: center;
-    }
-
-    #header #navigation ul li {
-        display: inline-block;
-        padding: 8px;
-        margin: 0px;
-    }
-
-    #header #shopping-cart {
-        display: none;
-    }
-
-    #header #billboard {
-        padding: 100px 0px 0px 4%;
-        height: 320px;
-        background: #eadfdd url("../media/versa2-fall-2019-bg-mobile.jpg") no-repeat center;
-    }
-}
-@media (min-width: 576px) {
-    #header #navigation ul li {
-        display: inline-block;
-        padding: 10px;
-        margin: 0px 5px;
-    }
-
-    #header #billboard {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        padding: 100px 0px 0px 4%;
-        height: 320px;
-        background: #eadfdd url("../media/versa2-fall-2019-bg.jpg") no-repeat center;
-    }
-}
-
-#header #navigation {
-    height: 67px;
-    margin: 15px 0px 0px 0px;
-}
-
-#header #navigation ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px 0px 0px 15px;
-}
-
-#header #navigation ul li:hover {
-    border-bottom: 2px solid #0099cc;
-}
-
-#header #navigation ul li.active {
-    border-bottom: 2px solid #0099cc;
-}
-
-#header #navigation a,
-#header #navigation li {
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-    color: #333333;
-}
-
-#header #navigation a:hover {
-    text-decoration: none;
-    color: #0099cc;
-}
-
-#header #navigation a.active,
-#header #navigation li.active {
-    color: #0099cc;
-}
-
-#header #shopping-cart {
-    text-align: center;
-}
-
-#header #billboard section h3,
-#header #billboard section p {
     max-width: 315px;
+    font-size: 1.1em;
+}
+.billboard h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+/* Extra witruimte tussen paragraaf en knop */
+.billboard p {
+    margin-bottom: 1.5em;
 }
 
-#header #billboard section h3 {
-    font-size: 46px;
-    font-weight: 300;
-    margin: 0px 0px -5px 0px;
-}
-
-#header #billboard section p {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 25px;
-}
-
-
-/* Lettertypen */
-/* ----------- */
-
-/* Titels */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "proxima-nova", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    color: #222222;
-}
-
-
-/* Knoppen */
-/* ------- */
-input[type="submit"],
-.button {
-    font-size: 14px;
-    color: #ffffff;
-    background: #002a3a;
-    text-transform: uppercase;
-    border-radius: 25px;
-    border: 3px solid #002a3a;
-    padding: 8px 25px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover,
-.button:hover {
-    color: #333333;
-    background: transparent;
-}
 
 
 /* Footer */
@@ -346,12 +268,3 @@ input[type="submit"]:hover,
 
 
 
-/* Helpers */
-/* ------- */
-.hide {
-    position: absolute;
-    width: 1px;
-    height: 1px; 
-    overflow: hidden;
-    left: -10000px;
-}
