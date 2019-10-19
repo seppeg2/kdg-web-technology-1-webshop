@@ -12,48 +12,207 @@ Gebruik voor de FAQ DL / DT / DD / DFN
 Meta title en meta description gebruiken
 CSS comments gebruiken
 Lineaire achtergrond gebruiken = radial gradient
+Formulier posten op html met GET methode
 */
 
-/* Algemeen */
-/* -------- */
-body {
-    margin: 0px;
+/* Algemene instellingen */
+/* --------------------- */
+html, body {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    font-style: normal;
+    color: #333333;
+    margin: 0;
+    min-height: 100vh; 
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------- */
+/* Hoofd lay-out van de pagina gebruik makend van Grid Layout */
+/* ---------------------------------------------------------- */
+body {
+    display: grid; 
+    /* Hoofd lay-out declaratie van de hoogte van de rijen navigatie, billboard, pagina en footer */
+    grid-template-rows: 75px 400px 1fr 200px;
+}
+header,
+main,
+footer {
+    display: grid;
+    /* Hoofd lay-out van de geneste Grid Layout voor de kolom instellingen */
+    grid-template-columns: 5vw minmax(min-content, 1200px) minmax(10vw, 1fr);
+}
+header section,
+footer section,
+main article {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.hero {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+/* ----------------------------------------- */
+/* Header omvat logo, navigatie en billboard */
+/* ----------------------------------------- */
+
+/* Opmaak Grid lay-out voor de navigatie  */
+/* -------------------------------------- */
+header:nth-of-type(1) section:nth-of-type(1) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    display: grid;
+    grid-template-columns: 200px 1fr 75px;
+}
+/* Uitlijning logo, navigatie en winkelmand */
+header:nth-of-type(1) section:nth-of-type(1) a, 
+header:nth-of-type(1) section:nth-of-type(1) nav,
+header:nth-of-type(1) section:nth-of-type(1) .shopping-cart {
+    align-self: center;
+}
+
+/* Opmaak van het hoofdmenu met geneste Flexbox */
+/* -------------------------------------------- */
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 75px;
+}
+/* Kleur instellingen links in het hoofdmenu */
+.menu a {
     color: #333333;
 }
-
-
-/* Helpers */
-/* ------- */
-.hide-heading {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    left: -10000px;
+/* Lay-out hoofdmenu items */
+.menu > li {
+    align-self: flex-end;
+    display: inline-block; 
+    padding: 20px; 
+    box-sizing: border-box;
+    cursor: pointer;
 }
+/* Instellen witte boord, geen nut maar anders verspringd de hoogte van de menu items bij hover */
+.menu > li {
+    border-bottom: 2px solid white;
+}
+/* Stel hover effect in op het hoofdmenu */
+.menu > li:hover {
+    color: #0099cc;
+    border-bottom: 2px solid #0099cc;
+}
+/* Hover kleur voor tekst hoofdmenu */
+.menu > li:hover a {
+    color: #0099cc;
+}
+/* Huidige pagina hoofdmenu instellingen */
+.menu > li.active {
+    color: #0099cc;
+    border-bottom: 2px solid #0099cc;
+}
+/* Opmaak van het submenu welke volledige breedte omvat */
+/* Submenu verbergen */
+.menu > li > ul {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 500ms;
+}
+/* Submenu laten verschijnen */
+.menu > li:hover > ul {
+    display: flex;
+    max-height: 600px;
+    transition: max-height 1000ms;
+}
+/* Lay-out van het submenu over hele breedte van het scherm */
+.menu > li > ul {
+    display: flex;
+    flex-wrap: wrap;
+    display: visible;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 75px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
+}
+/* Lay-out van de categorieën in het submenu */
+.menu > li > ul > li {
+    display: flex;
+    flex-direction: column;
+
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px 0;
+}
+/* Achtergrondkleur categorie 1 van het submenu */
+.menu > li > ul > li:nth-child(1) {
+    background: #e3e3e3;
+}
+/* Achtergrondkleur categorie 2 van het submenu */
+.menu > li > ul > li:nth-child(2) {
+    background: #e5f7f8;
+}
+/* Achtergrondkleur categorie 3 van het submenu */
+.menu > li > ul > li:nth-child(3) {
+    background: #c3c8c9;
+}
+/* Plaats afbeeldingen in het submenu mooi naast elkaar */
+.menu > li > ul > li > ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/* Titels van de categorieën in het submenu */
+.menu h4 {
+    margin: 0 0 1.2em 0; 
+    text-transform: uppercase;
+    font-size: 0.90em;
+}
+/* Fix voor kleur van de tekst in het submenu */
+.menu > li:hover > ul > li a {
+    color: #333333;
+}
+/* Spatie van tekst onder foto in het submenu */
+.menu figcaption {
+    margin-top: 0.5em;
+}
+/* Hover kleur van submenu tekst */ 
+.menu > li > ul > li > ul > li:hover a {
+    color: #0099cc;
+}
+
+/* Billboard */
+/* --------- */
+header:nth-of-type(2) {
+    background: #eadfdd url("../media/versa2-fall-2019-bg.jpg") no-repeat center;
+    box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
+}
+
+header:nth-of-type(2) section:nth-of-type(1) {
+    align-self: center;
+    background: transparent;
+}
+
+
+
+
+
 
 
 /* Titels */
 /* ------ */
 @media (max-width: 575px) {
-    #header.grid-container {
-        display: grid;
-        grid-template-columns: auto;
-        align-items: center;
-    }
-
-    #header #logo {
-        margin-top: 25px;
-        margin-bottom: 0px;
-        text-indent: -10000px;
-        background: url('../media/fitbit-logo.svg') no-repeat center;
-        background-size: 140px;
-    }
-
     #header #navigation {
         text-align: center;
     }
@@ -75,19 +234,6 @@ body {
     }
 }
 @media (min-width: 576px) {
-    #header.grid-container {
-        display: grid;
-        grid-template-columns: 228px auto 80px;
-        align-items: center;
-    }
-
-    #header #logo {
-        margin: 0px;
-        text-indent: -9999px;
-        background: url('../media/fitbit-logo.svg') no-repeat center;
-        background-size: 114px;
-    }
-
     #header #navigation ul li {
         display: inline-block;
         padding: 10px;
@@ -197,3 +343,15 @@ input[type="submit"]:hover,
 
 /* Footer */
 /* ------ */
+
+
+
+/* Helpers */
+/* ------- */
+.hide {
+    position: absolute;
+    width: 1px;
+    height: 1px; 
+    overflow: hidden;
+    left: -10000px;
+}
