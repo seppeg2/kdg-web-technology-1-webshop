@@ -30,6 +30,9 @@ html, body {
 a {
     text-decoration: none;
 }
+p {
+    margin: 0 0 1.5rem 0; 
+}
 
 /* Titels algemene instellingen */
 /* ---------------------------- */
@@ -47,13 +50,26 @@ h1, h2, h3, h4, h5, h6 {
 input[type="submit"],
 .button {
     font-size: 0.9em;
-    color: #ffffff;
+    color: white;
     background: #0099cc;
     text-transform: uppercase;
-    border-radius: 0;
     border-bottom: 3px solid #007399;
     padding: 0.6em 1.4rem;
     cursor: pointer;
+}
+
+.button-transparent {
+    font-size: 0.9em;
+    color: white;
+    text-transform: uppercase;
+    border: 2px solid white;
+    padding: 0.6em 1.4rem;
+    cursor: pointer;    
+}
+
+.button-transparent:hover {
+    background: #007399;
+    border: 2px solid #007399;
 }
 
 input[type="submit"]:hover,
@@ -396,6 +412,16 @@ main article {
 }
 
 .home .flex-container > section:nth-of-type(3) {
-    background: #016ba7;
+    flex-basis: 40%;
+    background: #0099cc url('../media/fitbit-personaliseer.png') right bottom no-repeat;
 }
 
+@media only screen and (max-width: 760px) {
+    .home .flex-container > section:nth-of-type(3) {
+        background: #0099cc;
+    }
+}
+
+.home .flex-container > section:nth-of-type(3) p {
+    max-width: 440px;
+}
