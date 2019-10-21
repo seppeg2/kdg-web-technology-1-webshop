@@ -24,6 +24,7 @@ html, body {
     font-family: Helvetica, Arial, sans-serif;
     color: #333333;
     margin: 0;
+    padding: 0;
     min-height: 100vh; 
     line-height: 1.75rem;
 }
@@ -411,6 +412,16 @@ main article {
 
 .home .flex-container > section:nth-of-type(2) p {
     max-width: 75%;
+}
+
+@media only screen and (max-width: 760px) { 
+    .home .flex-container > section:nth-of-type(2) {
+        background: #00B0B9;
+    }
+
+    .home .flex-container > section:nth-of-type(2) p {
+        max-width: 100%;
+    }
 }
 
 .home .flex-container > section:nth-of-type(3) {
