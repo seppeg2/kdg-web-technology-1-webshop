@@ -26,8 +26,6 @@ html, body {
     color: #333333;
     margin: 0;
     padding: 0;
-    min-height: 100vh; 
-    line-height: 1.75rem;
 }
 /* Standaard onderlijning links uitzetten */
 a {
@@ -35,6 +33,10 @@ a {
 }
 p {
     margin: 0 0 1.5rem 0; 
+    line-height: 1.75rem;
+}
+ol, ul {
+    line-height: 1.75rem;
 }
 
 /* Titels algemene instellingen */
@@ -56,29 +58,34 @@ input[type="submit"],
     color: white;
     background: #0099cc;
     text-transform: uppercase;
-    border-bottom: 3px solid #007399;
-    padding: 0.6rem 1.4rem;
+    padding: 1rem 1.4rem;
     cursor: pointer;
+    transition: background-color 500ms;
+    letter-spacing: 0.02rem;
+}
+
+input[type="submit"]:hover,
+.button:hover {
+    background: #002f41;
+    margin: 0;
+    transition: background-color 500ms;
 }
 
 .button-transparent {
     font-size: 0.9rem;
     color: white;
     text-transform: uppercase;
-    border: 2px solid white;
-    padding: 0.6rem 1.4rem;
-    cursor: pointer;    
+    border-bottom: 4px solid white;
+    padding: 0.6rem 0rem;
+    cursor: pointer;   
+    letter-spacing: 0.02rem;
 }
 
 .button-transparent:hover {
-    background: #007399;
-    border: 2px solid #007399;
+    color: #002f41;
+    border-bottom: 4px solid #002f41;
 }
 
-input[type="submit"]:hover,
-.button:hover {
-    background: #007399;
-}
 
 
 /* Helpers */
@@ -100,13 +107,13 @@ input[type="submit"]:hover,
 @media only screen and (min-width: 720px) {
     body {
         display: grid; 
-        grid-template-rows: 75px 400px 1fr 200px;
+        grid-template-rows: 75px 400px 1fr 250px;
     }
 }
 @media only screen and (max-width: 720px) {
     body {
         display: grid; 
-        grid-template-rows: 150px 400px 1fr 200px;
+        grid-template-rows: 150px 400px 1fr 250px;
     }
 }
 /* Hoofd lay-out van de geneste Grid Layout, de kolom instellingen */
@@ -320,9 +327,6 @@ main article {
 /* -------------- */
 /* Billbaord over heel de breedte van het scherm, bewust gekozen om dit in een aparte header te zetten. Gemakkelijker los te koppelen op pagina's waar het niet nodig is.  */
 /* Zie http://html5doctor.com/the-header-element/ */
-.billboard {
-    margin-bottom: 2em;
-}
 @media only screen and (min-width: 720px) {
     .billboard {
         background: #eadfdd url("../media/versa2-fall-2019-bg.jpg") no-repeat center;
@@ -344,15 +348,68 @@ main article {
 .billboard h2 {
     font-size: 2rem;
 }
-/* Extra witruimte tussen paragraaf en knop */
-.billboard p {
-    margin-bottom: 1.5rem;
-}
 
 
 /* ------ */
 /* Footer */
 /* ------ */
+.footer {
+    background: #f5f5f5;
+}
+
+.footer section {
+    display: flex;
+    flex-direction: column;
+
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+.footer h2 {
+    font-size: 0.90rem;
+    margin: 0;
+    color: #999999;
+}
+
+.footer .menu-footer {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;   
+}
+
+.footer .menu-footer li {
+    margin: 0rem 1rem;
+}
+
+.footer .menu-footer a {
+    font-size: 0.90rem;
+    text-transform: uppercase;
+    color: #999999;
+}
+
+.footer .menu-footer a:hover {
+    color: #0099cc;
+    border-bottom: 2px solid #0099cc;
+}
+
+.footer .social-media {
+    display: flex;
+    list-style: none;
+    margin: 1rem auto;
+    padding: 0;
+}
+
+.footer .social-media li {
+    margin: 0 2rem 1rem 2rem;
+}
+
+.footer .social-media img {
+    height: 30px;
+    opacity: 0.25;
+}
+
 
 
 
@@ -365,6 +422,7 @@ main article {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    margin: 2rem 0;
 }
 
 .home .flex-container > section {
