@@ -24,6 +24,7 @@ html, body {
     color: #333333;
     margin: 0;
     min-height: 100vh; 
+    line-height: 1.75rem;
 }
 /* Standaard onderlijning links uitzetten */
 a {
@@ -35,6 +36,10 @@ a {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     color: #333333;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.01rem;
+    line-height: 2.5rem;
+
 }
 
 /* Knoppen */
@@ -47,7 +52,7 @@ input[type="submit"],
     text-transform: uppercase;
     border-radius: 0;
     border-bottom: 3px solid #007399;
-    padding: 0.6em 1.4em;
+    padding: 0.6em 1.4rem;
     cursor: pointer;
 }
 
@@ -72,16 +77,34 @@ input[type="submit"]:hover,
 /* ---------------------------------------------------------- */
 
 /* Hoofd lay-out declaratie van de hoogte van de rijen navigatie, billboard, pagina en footer */
-body {
-    display: grid; 
-    grid-template-rows: 75px 400px 1fr 200px;
+@media only screen and (min-width: 720px) {
+    body {
+        display: grid; 
+        grid-template-rows: 75px 400px 1fr 200px;
+    }
+}
+@media only screen and (max-width: 720px) {
+    body {
+        display: grid; 
+        grid-template-rows: 150px 400px 1fr 200px;
+    }
 }
 /* Hoofd lay-out van de geneste Grid Layout, de kolom instellingen */
-header,
-main,
-footer {
-    display: grid;
-    grid-template-columns: 5vw minmax(min-content, 1200px) minmax(10vw, 1fr);
+@media only screen and (min-width: 720px) {
+    header,
+    main,
+    footer {
+        display: grid;
+        grid-template-columns: 5vw minmax(min-content, 1200px) minmax(5vw, 1fr);
+    }
+}
+@media only screen and (max-width: 720px) {
+    header,
+    main,
+    footer {
+        display: grid;
+        grid-template-columns: 5vw 1fr 5vw;
+    }
 }
 /* Links en rechts van de gebieden met content is een witspatie */
 header section,
@@ -104,18 +127,44 @@ main article {
 
 /* Opmaak Grid lay-out voor de navigatie  */
 /* -------------------------------------- */
-.navigation section {
-    grid-column-start: 2;
-    grid-column-end: 4;
+@media only screen and (min-width: 720px) {
+    .navigation section {
+        grid-column-start: 2;
+        grid-column-end: 4;
 
-    display: grid;
-    grid-template-columns: 200px 1fr 75px;
+        display: grid;
+        grid-template-columns: 200px 1fr 75px;
+    }
+    .shopping-cart {
+        justify-self: center;
+    }
+}
+@media only screen and (max-width: 720px) {
+    .navigation section {
+        grid-column-start: 1;
+        grid-column-end: 4;
+
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        
+    }
+    .shopping-cart {
+        display: none;
+    }
 }
 /* Uitlijning logo, navigatie en winkelmand */
-.navigation section a, 
-.navigation section nav,
-.navigation section .shopping-cart {
-    align-self: center;
+@media only screen and (min-width: 720px) {
+    .navigation section a, 
+    .navigation section nav {
+        align-self: center;
+    }
+}
+@media only screen and (max-width: 720px) {
+    .navigation section a, 
+    .navigation section nav {
+        align-self: end;
+    }
 }
 
 /* Opmaak van het hoofdmenu met geneste Flexbox */
@@ -139,6 +188,16 @@ main article {
     padding: 20px; 
     box-sizing: border-box;
     cursor: pointer;
+}
+@media only screen and (max-width: 400px) {
+    .menu > li {
+        padding: 20px 15px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .menu > li {
+        padding: 20px 10px;
+    }
 }
 /* Instellen witte boord, geen nut maar anders verspringd de hoogte van de menu items bij hover */
 .menu > li {
@@ -171,7 +230,7 @@ main article {
 /* Submenu laten verschijnen */
 .menu > li:hover > ul {
     display: flex;
-    max-height: 600px;
+    max-height: 1296px;
     transition: max-height 1000ms;
 }
 /* Lay-out van het submenu over hele breedte van het scherm */
@@ -188,6 +247,11 @@ main article {
     width: 100%;
     height: auto;
     box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
+}
+@media only screen and (max-width: 720px) {
+    .menu > li > ul {
+        top: 150px; 
+    }
 }
 /* Lay-out van de categorieën in het submenu */
 .menu > li > ul > li {
@@ -213,6 +277,7 @@ main article {
 /* Plaats afbeeldingen in het submenu mooi naast elkaar */
 .menu > li > ul > li > ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
     list-style: none;
@@ -222,9 +287,9 @@ main article {
 /* Titels van de categorieën in het submenu */
 .menu h4 {
     font-weight: 600;
-    margin: 0 0 1.2em 0; 
+    margin: 0 0 1.2rem 0; 
     text-transform: uppercase;
-    font-size: 0.90em;
+    font-size: 0.90rem;
 }
 /* Fix voor kleur van de tekst in het submenu */
 .menu > li:hover > ul > li a {
@@ -232,7 +297,7 @@ main article {
 }
 /* Spatie van tekst onder foto in het submenu */
 .menu figcaption {
-    margin-top: 0.5em;
+    margin-top: 0.5rem;
 }
 /* Hover kleur van submenu tekst */ 
 .menu > li > ul > li > ul > li:hover a {
@@ -242,29 +307,95 @@ main article {
 /* Hero billboard */
 /* -------------- */
 /* Billbaord over heel de breedte van het scherm, bewust gekozen om dit in een aparte header te zetten. Gemakkelijker los te koppelen op pagina's waar het niet nodig is.  */
+/* Zie http://html5doctor.com/the-header-element/ */
 .billboard {
-    background: #eadfdd url("../media/versa2-fall-2019-bg.jpg") no-repeat center;
-    box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
+    margin-bottom: 2em;
+}
+@media only screen and (min-width: 720px) {
+    .billboard {
+        background: #eadfdd url("../media/versa2-fall-2019-bg.jpg") no-repeat center;
+        box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
+    }
+}
+@media only screen and (max-width: 720px) {
+    .billboard {
+        background: #eadfdd url("../media/versa2-fall-2019-bg-mobile.jpg") no-repeat center;
+        box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
+    }
 }
 /* Lay-out call to action van het billboard */
 .billboard section {
     align-self: center;
     max-width: 315px;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 .billboard h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
+    font-size: 2rem;
 }
 /* Extra witruimte tussen paragraaf en knop */
 .billboard p {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5rem;
 }
 
 
-
+/* ------ */
 /* Footer */
 /* ------ */
 
 
+/* -------------- */
+/* Homepagina CSS */
+/* -------------- */
+
+.home .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.home .flex-container > section {
+    box-sizing: border-box;
+    flex-grow: 1;
+    margin: 0.5rem;
+    padding: 3rem;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.home .flex-container > section h2 {
+    color: white; 
+    font-size: 2rem;
+}
+
+.home .flex-container > section:nth-of-type(1) {
+    flex-basis: 100%;
+    background: url('../media/why-fitbit-bg.jpg') right no-repeat;
+    background-size: 100%;
+    transition: background-size 500ms;
+}
+
+.home .flex-container > section:nth-of-type(1):hover {
+    background: url('../media/why-fitbit-bg.jpg') right no-repeat; 
+    background-size: 110%;
+    transition: background-size 500ms;
+} 
+
+@media only screen and (max-width: 920px) {
+    .home .flex-container > section:nth-of-type(1) {
+        background: #002f41;
+    }
+}
+
+.home .flex-container > section:nth-of-type(2) {
+    flex-basis: 55%;
+    background: #00B0B9 url('../media/wat-is-fitbit-bg.jpg') right no-repeat;
+}
+
+.home .flex-container > section:nth-of-type(2) p {
+    max-width: 75%;
+}
+
+.home .flex-container > section:nth-of-type(3) {
+    background: #016ba7;
+}
 
