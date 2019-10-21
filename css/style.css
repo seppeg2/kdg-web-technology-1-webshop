@@ -15,6 +15,7 @@ Formulier posten op html met GET methode
 Op alle subpagina's een breadcrumb (excl. home)
 */
 
+
 /* --------------------- */
 /* Algemene instellingen */
 /* --------------------- */
@@ -51,21 +52,21 @@ h1, h2, h3, h4, h5, h6 {
 /* ------- */
 input[type="submit"],
 .button {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     color: white;
     background: #0099cc;
     text-transform: uppercase;
     border-bottom: 3px solid #007399;
-    padding: 0.6em 1.4rem;
+    padding: 0.6rem 1.4rem;
     cursor: pointer;
 }
 
 .button-transparent {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     color: white;
     text-transform: uppercase;
     border: 2px solid white;
-    padding: 0.6em 1.4rem;
+    padding: 0.6rem 1.4rem;
     cursor: pointer;    
 }
 
@@ -78,6 +79,7 @@ input[type="submit"]:hover,
 .button:hover {
     background: #007399;
 }
+
 
 /* Helpers */
 /* ------- */
@@ -113,7 +115,7 @@ input[type="submit"]:hover,
     main,
     footer {
         display: grid;
-        grid-template-columns: 5vw minmax(min-content, 1200px) minmax(5vw, 1fr);
+        grid-template-columns: 5vw minmax(min-content, 1400px) minmax(5vw, 1fr);
     }
 }
 @media only screen and (max-width: 720px) {
@@ -165,7 +167,6 @@ main article {
         display: grid;
         grid-template-rows: 1fr 1fr;
         justify-items: center;
-        
     }
     .shopping-cart {
         display: none;
@@ -173,14 +174,14 @@ main article {
 }
 /* Uitlijning logo, navigatie en winkelmand */
 @media only screen and (min-width: 720px) {
-    .navigation section a, 
-    .navigation section nav {
+    .navigation section > a, 
+    .navigation section > nav {
         align-self: center;
     }
 }
 @media only screen and (max-width: 720px) {
-    .navigation section a, 
-    .navigation section nav {
+    .navigation section > a, 
+    .navigation section > nav {
         align-self: end;
     }
 }
@@ -202,9 +203,7 @@ main article {
 /* Lay-out hoofdmenu items */
 .menu > li {
     align-self: flex-end;
-    display: inline-block; 
     padding: 20px; 
-    box-sizing: border-box;
     cursor: pointer;
 }
 @media only screen and (max-width: 400px) {
@@ -238,33 +237,27 @@ main article {
 
 /* Opmaak van het submenu welke volledige breedte omvat met Flexbox */
 /* ---------------------------------------------------------------- */
-/* Submenu verbergen */
-.menu > li > ul {
-    display: none;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 500ms;
-}
-/* Submenu laten verschijnen */
-.menu > li:hover > ul {
-    display: flex;
-    max-height: 1296px;
-    transition: max-height 1000ms;
-}
 /* Lay-out van het submenu over hele breedte van het scherm */
 .menu > li > ul {
     display: flex;
     flex-wrap: wrap;
-    display: visible;
+    position: absolute;
     list-style: none;
     margin: 0;
     padding: 0;
-    position: absolute;
     left: 0;
     top: 75px;
     width: 100%;
-    height: auto;
+    max-height: 0;
+    overflow: hidden;
     box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
+    transition: max-height 500ms;
+    background: red;
+}
+/* Submenu laten verschijnen */
+.menu > li:hover > ul {
+    max-height: 1296px;
+    transition: max-height 1000ms;
 }
 @media only screen and (max-width: 720px) {
     .menu > li > ul {
@@ -276,6 +269,7 @@ main article {
     display: flex;
     flex-direction: column;
 
+    justify-content: center;
     flex-grow: 1;
     text-align: center;
     padding: 20px 0;
@@ -305,7 +299,7 @@ main article {
 /* Titels van de categorieën in het submenu */
 .menu h4 {
     font-weight: 600;
-    margin: 0 0 1.2rem 0; 
+    margin-bottom: 1.2rem; 
     text-transform: uppercase;
     font-size: 0.90rem;
 }
@@ -361,6 +355,8 @@ main article {
 /* ------ */
 
 
+
+
 /* -------------- */
 /* Homepagina CSS */
 /* -------------- */
@@ -378,6 +374,11 @@ main article {
     padding: 3rem;
     color: white;
     font-size: 1.1rem;
+}
+@media only screen and (max-width: 720px) {
+    .home .flex-container > section {
+        padding: 2rem;
+    }
 }
 
 .home .flex-container > section h2 {
