@@ -13,6 +13,7 @@ Meta title en meta description gebruiken
 Lineaire achtergrond gebruiken = radial gradient
 Formulier posten op html met GET methode
 Op alle subpagina's een breadcrumb (excl. home)
+Personaliseer knop andere kleur
 */
 
 
@@ -56,7 +57,7 @@ input[type="submit"],
 .button {
     font-size: 0.9rem;
     color: white;
-    background: #0099cc;
+    background: #002f41;
     text-transform: uppercase;
     padding: 1rem 1.4rem;
     cursor: pointer;
@@ -66,7 +67,7 @@ input[type="submit"],
 
 input[type="submit"]:hover,
 .button:hover {
-    background: #002f41;
+    background: #0099cc;
     margin: 0;
     transition: background-color 500ms;
 }
@@ -122,7 +123,7 @@ input[type="submit"]:hover,
     main,
     footer {
         display: grid;
-        grid-template-columns: 5vw minmax(min-content, 1400px) minmax(5vw, 1fr);
+        grid-template-columns: 4vw minmax(min-content, 1400px) minmax(5vw, 1fr);
     }
 }
 @media only screen and (max-width: 720px) {
@@ -342,11 +343,11 @@ main article {
 /* Lay-out call to action van het billboard */
 .billboard section {
     align-self: center;
-    max-width: 315px;
+    max-width: 310px;
     font-size: 1.1rem;
 }
 .billboard h2 {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 
@@ -360,31 +361,40 @@ main article {
 .footer section {
     display: flex;
     flex-direction: column;
-
-    justify-self: center;
-    align-self: center;
-    text-align: center;
+    justify-content: center;
 }
 
-.footer h2 {
-    font-size: 0.90rem;
+.footer p, 
+.footer p > a {
+    font-size: 0.75rem;
     margin: 0;
     color: #999999;
+    padding: 0.25rem 0 0.25rem 0;
+}
+
+.footer p > a {
+    border-bottom: 2px solid #999999;
+}
+
+.footer p > a:hover {
+    color: #0099cc;
+    border-bottom: 2px solid #0099cc;
 }
 
 .footer .menu-footer {
     display: flex;
     list-style: none;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;   
 }
 
 .footer .menu-footer li {
-    margin: 0rem 1rem;
+    margin: 0;
+    padding: 0 1rem 0 0;
 }
 
 .footer .menu-footer a {
-    font-size: 0.90rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     color: #999999;
 }
@@ -397,12 +407,13 @@ main article {
 .footer .social-media {
     display: flex;
     list-style: none;
-    margin: 1rem auto;
+    margin: 0 0 0.5rem 0;
     padding: 0;
 }
 
 .footer .social-media li {
-    margin: 0 2rem 1rem 2rem;
+    margin: 0 2rem 0rem 0rem;
+    padding: 0;
 }
 
 .footer .social-media img {
