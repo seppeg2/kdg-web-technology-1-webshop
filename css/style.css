@@ -60,11 +60,15 @@ article h2 {
     margin: 2rem 0 0 0;
 }
 
-/* Knoppen */
-/* ------- */
+/* Knoppen en formulieren */
+/* ---------------------- */
+.fields {
+    font-size: 1rem;
+    padding: 0.25rem;
+}
 input[type="submit"],
 .button {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: white;
     background: #002f41;
     text-transform: uppercase;
@@ -73,6 +77,9 @@ input[type="submit"],
     transition: background-color 500ms;
     letter-spacing: 0.02rem;
 }
+.wide {
+    width:100%;
+}
 input[type="submit"]:hover,
 .button:hover {
     background: #0099cc;
@@ -80,7 +87,7 @@ input[type="submit"]:hover,
     transition: background-color 500ms;
 }
 .button-transparent {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: white;
     text-transform: uppercase;
     border-bottom: 4px solid white;
@@ -511,9 +518,9 @@ body > main > article {
 
 
 
-/* *********************** */
-/* C. PRODUCTEN PAGINA CSS */
-/* *********************** */
+/* ************************* */
+/* C. PRODUCTEN PAGINA'S CSS */
+/* ************************* */
 
 .shop aside > ul {
     display: flex;
@@ -527,7 +534,8 @@ body > main > article {
     margin: 0.5rem 0.5rem;
     padding: 0 0.75rem;
 }
-.shop aside > ul li a {
+.shop aside > ul li a,
+.shop aside > ul li {
     text-transform: uppercase;
     font-size: 0.85rem;
     font-weight: bold;
@@ -536,8 +544,13 @@ body > main > article {
 .shop aside > ul > .filter-active {
     background: #002f41;
 }
-.shop aside > ul > .filter-active a {
+.shop aside > ul > .filter-active a,
+.shop aside > ul > .filter-active {
     color: white;
+}
+.shop aside > ul > .submenu {
+    margin-left: -0.75rem;
+    background: #0099cc;
 }
 .shop .flex-container {
     display: flex;
@@ -548,15 +561,29 @@ body > main > article {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
-    background-color: #f9f9f9;
+    background: #f9f9f9;
   
     margin: 20px 20px 20px 0px;
     padding: 10px;
     flex: 1 0 225px;
 }
+.shop .flex-container.product-page section {
+    justify-content: flex-start;
+    flex: 1 0 320px;
+}
+.shop .flex-container.product-page section:nth-of-type(1) {
+    padding: 1.5rem;
+}
+.shop .flex-container.product-page section:last-child {
+    padding: 0rem;
+    background: transparent;
+}
 .shop .flex-container img {
     width: 80%;
     margin: 0 auto;
+}
+.shop .flex-container.flex-container.product-page img {
+    width: 100%;
 }
 .shop .flex-container header {
     padding: 20px;
@@ -565,7 +592,7 @@ body > main > article {
 }
 .shop .flex-container h3 {
     line-height: 1.75rem;
-    margin: 0;
+    margin: 0 0 0.5rem;
 }
 .shop .flex-container header > p {
     font-size: 0.85rem;
@@ -582,4 +609,14 @@ body > main > article {
     width: 5vw;
     margin: 2rem 0 -0.5rem 0;
     border: 3px solid #002f41;
+}
+
+.shop .flex-container form {
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    grid-gap: 1rem;
+}
+.shop .flex-container input[type="submit"],
+.shop .flex-container h3 {
+    grid-column-start: span 2;
 }
