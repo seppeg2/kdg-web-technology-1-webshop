@@ -38,11 +38,10 @@ a {
     text-decoration: none;
 }
 p {
-    margin: 0 0 1.5rem 0; 
     line-height: 1.75rem;
 }
 ol, ul {
-    line-height: 1.75rem;
+    line-height: 1.7rem;
 }
 
 /* Titels algemene instellingen */
@@ -50,14 +49,11 @@ ol, ul {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     color: #333333;
-    margin: 0 0 1rem 0;
+    margin: 1rem 0 0.5rem 0;
     letter-spacing: 0.01rem;
-    line-height: 2.5rem;
+    line-height: 1.5rem;
     text-transform: uppercase;
 
-}
-article h2 {
-    margin: 2rem 0 0 0;
 }
 
 /* Knoppen en formulieren */
@@ -583,7 +579,12 @@ body > main > article {
     margin: 0 auto;
 }
 .shop .flex-container.flex-container.product-page img {
-    width: 100%;
+    justify-self: center;
+    align-self: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 50%;
+    margin: 20px 20px 20px 0px;
 }
 .shop .flex-container header {
     padding: 20px;
@@ -607,7 +608,7 @@ body > main > article {
 }
 .shop hr {
     width: 5vw;
-    margin: 2rem 0 -0.5rem 0;
+    margin: 2rem 0;
     border: 3px solid #002f41;
 }
 
@@ -619,4 +620,15 @@ body > main > article {
 .shop .flex-container input[type="submit"],
 .shop .flex-container h3 {
     grid-column-start: span 2;
+}
+.shop .columns {
+    column-count: 3;
+    column-gap: 2rem;
+    font-size: 0.9rem;
+    color: #666666;
+}
+@media only screen and (max-width: 720px) {
+    .shop .columns {
+        column-count: 1;
+    }
 }
