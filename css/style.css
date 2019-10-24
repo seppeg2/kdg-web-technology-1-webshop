@@ -609,6 +609,9 @@ body > main > article {
     .shop .grid-container section {
         padding: 1rem;
     }
+    .shop .grid-container form {
+        width: 98%;
+    }
 }
 .shop .grid-container img {
     width: 100%;
