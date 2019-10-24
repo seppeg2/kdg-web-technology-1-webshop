@@ -36,6 +36,15 @@ html, body {
 }
 a {
     text-decoration: none;
+    color: #333333;
+}
+article a {
+    color: #333333;
+    border-bottom: 1px solid #333333;
+}
+article a:hover {
+    color: #0099cc;
+    border-bottom: 1px solid #0099cc;
 }
 p {
     line-height: 1.75rem;
@@ -59,8 +68,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Knoppen en formulieren */
 /* ---------------------- */
 .fields {
-    font-size: 1rem;
-    padding: 0.25rem;
+    font: 400 1rem Helvetica;
+    padding: 0.5rem;
+    border: 1px solid #cccccc;
 }
 input[type="submit"],
 .button {
@@ -221,7 +231,6 @@ body > main > article {
 }
 
 .page-without-billboard > .navigation {
-
     box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
 }
 
@@ -461,7 +470,7 @@ body > main > article {
 }
 @media only screen and (max-width: 720px) {
     .home .flex-container > section {
-        padding: 2rem;
+        padding: 1rem;
     }
 }
 .home .flex-container > section h2 {
@@ -557,12 +566,15 @@ body > main > article {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     background: #f9f9f9;
-    margin: 20px 20px 20px 0px;
+    margin: 0.5rem 0.5rem;
     padding: 10px;
     flex-grow: 1;
-    flex-basis: 200px;
+    flex-basis: 220px;
+}
+.shop .flex-container section a {
+    border-bottom: 0;
 }
 .shop .flex-container section img {
     width: 100%;
@@ -599,10 +611,15 @@ body > main > article {
 }
 .shop .grid-container section {
     background: #f9f9f9;
-    padding: 3rem;
+    padding: 2rem;
     overflow: hidden;
 }
-@media only screen and (max-width: 960px) {
+.shop .grid-container form {
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    grid-gap: 1rem;
+}
+@media only screen and (max-width: 760px) {
     .shop .grid-container {
         grid-template-columns: 1fr;
     }
@@ -610,16 +627,11 @@ body > main > article {
         padding: 1rem;
     }
     .shop .grid-container form {
-        width: 98%;
+        width: 95%;
     }
 }
 .shop .grid-container img {
     width: 100%;
-}
-.shop .grid-container form {
-    display: grid;
-    grid-template-columns: 25% 1fr;
-    grid-gap: 1rem;
 }
 .shop .grid-container input[type="submit"] {
     grid-column-start: span 2;
@@ -635,3 +647,50 @@ body > main > article {
         column-count: 1;
     }
 }
+
+
+
+/* ********************* */
+/* D. CONTACT PAGINA CSS */
+/* ********************* */
+
+.contact .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 4rem;
+    grid-row-gap: 1rem;
+}
+.contact .grid-container > header {
+    grid-column-start: span 2;
+}
+.contact .grid-container section {
+
+}
+.contact .grid-container form label {
+    display: none;
+}
+.contact .grid-container form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+@media only screen and (max-width: 960px) {
+    .contact .grid-container > header {
+        grid-column-start: unset;
+    }
+    .contact .grid-container > header p {
+        margin-bottom: 0;
+    }
+    .contact .grid-container {
+        grid-template-columns: 100%;
+    }
+    .contact aside {
+        margin-top: 0;
+    }
+}
+.contact aside iframe {
+    border: 0;
+    padding: 0;
+    margin: 0 0 -5px 0;
+}
+
