@@ -103,11 +103,11 @@
                     <h3>Stuur een bericht</h3>
                     <p>Gebruik onderstaand formulier om een bericht te sturen.</p>
                     <form action="/html/contact/index.html" method="GET">
-                        <label>Naam:</label>
+                        <label for="naam">Naam:</label>
                         <input type="text" placeholder="Naam" name="naam" id="naam" required class="fields">
-                        <label>E-mailadres:</label>
+                        <label for="email">E-mailadres:</label>
                         <input type="email" placeholder="E-mailadres" name="email" id="email" required class="fields">
-                        <label>Bericht:</label>
+                        <label for="bericht">Bericht:</label>
                         <textarea name="bericht" id="bericht" rows="4" placeholder="Bericht..." class="fields"></textarea>
                         <input type="submit" value="Verzenden" class="wide">
                     </form>
