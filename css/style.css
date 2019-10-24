@@ -231,7 +231,7 @@ body > main > article {
 }
 
 .page-without-billboard > .navigation {
-    box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 10px rgba(0,0,0,0.10);
 }
 
 /* Opmaak van het hoofdmenu met geneste Flexbox */
@@ -297,7 +297,7 @@ body > main > article {
     width: 100%;
     max-height: 0;
     overflow: hidden;
-    box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 10px rgba(0,0,0,0.10);
     transition: max-height 500ms;
 }
 /* Submenu laten verschijnen, max-height staat zo groot vanwege ondersteuning voor klein scherm */
@@ -368,13 +368,13 @@ body > main > article {
 @media only screen and (min-width: 720px) {
     .billboard {
         background: #eadfdd url("../media/versa2-fall-2019-bg.jpg") no-repeat center;
-        box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
+        box-shadow: 0 1px 10px rgba(0,0,0,0.10);
     }
 }
 @media only screen and (max-width: 720px) {
     .billboard {
         background: #eadfdd url("../media/versa2-fall-2019-bg-mobile.jpg") no-repeat center;
-        box-shadow: 0 10px 6px -6px rgba(0,0,0,0.15);
+        box-shadow: 0 1px 10px rgba(0,0,0,0.10);
     }
 }
 /* Lay-out call to action in het billboard */
