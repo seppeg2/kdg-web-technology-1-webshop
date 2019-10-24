@@ -142,7 +142,7 @@ input[type="submit"]:hover,
     body > main,
     body > footer {
         display: grid;
-        grid-template-columns: 4vw minmax(min-content, 1400px) minmax(5vw, 1fr);
+        grid-template-columns: 4vw minmax(min-content, 1400px) minmax(4vw, 1fr);
     }
 }
 @media only screen and (max-width: 720px) {
@@ -150,7 +150,7 @@ input[type="submit"]:hover,
     body > main,
     body > footer {
         display: grid;
-        grid-template-columns: 4vw 1fr 5vw;
+        grid-template-columns: 4vw 1fr 4vw;
     }
 }
 /* Links en rechts van de gebieden met content is een witspatie */
@@ -597,15 +597,18 @@ body > main > article {
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
 }
-@media only screen and (max-width: 960px) {
-    .shop .grid-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-    }
-}
 .shop .grid-container section {
     background: #f9f9f9;
     padding: 3rem;
+    overflow: hidden;
+}
+@media only screen and (max-width: 960px) {
+    .shop .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .shop .grid-container section {
+        padding: 1rem;
+    }
 }
 .shop .grid-container img {
     width: 100%;
