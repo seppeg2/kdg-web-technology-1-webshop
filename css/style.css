@@ -20,6 +20,10 @@ Versie: 1.0
 /* ************************************************************* */
 /* C. PRODUCTEN PAGINA CSS                                       */
 /* ************************************************************* */
+/* D. CONTACT PAGINA CSS                                         */
+/* ************************************************************* */
+/* E. FAQ PAGINA CSS                                             */
+/* ************************************************************* */
 
 
 /* ------------------------ */
@@ -89,6 +93,7 @@ input[type="submit"],
 }
 input[type="submit"]:hover,
 .button:hover {
+    color: white;
     background: #0099cc;
     margin: 0;
     transition: background-color 500ms;
@@ -154,6 +159,9 @@ input[type="submit"]:hover,
         display: grid;
         grid-template-columns: 4vw minmax(min-content, 1400px) minmax(4vw, 1fr);
     }
+    body.blog > main {
+        grid-template-columns: 4vw minmax(min-content, 1150px) 250px minmax(4vw, 1fr);
+    }
 }
 @media only screen and (max-width: 720px) {
     body > header,
@@ -161,6 +169,9 @@ input[type="submit"]:hover,
     body > footer {
         display: grid;
         grid-template-columns: 4vw 1fr 4vw;
+    }
+    body.blog > main > aside {
+        display: none;
     }
 }
 /* Links en rechts van de gebieden met content is een witspatie */
@@ -176,6 +187,10 @@ body > main > aside {
 }
 body > main > article {
     margin: 2rem 0;
+}
+body.blog > main > aside {
+    grid-column-start: 3;
+    grid-column-end: 4;
 }
 /* Indien toegepast op een section of article is heel de breedte beschikbaar voor content */
 .hero {
@@ -692,3 +707,97 @@ body > main > article {
     width: 100%;
 }
 
+
+
+/* ***************** */
+/* E. FAQ PAGINA CSS */
+/* ***************** */
+
+.faq dl {
+    display: flex;
+    flex-direction: column;
+}
+.faq dt,
+.faq dd {
+    margin: 0;
+    padding: 1rem 1rem;
+    background: #f5f5f5;
+    border: 1px solid #cccccc;
+}
+.faq dt {
+    font-weight: 600;
+}
+.faq dd {
+    border-top: 0;
+    background: #fdfdfd;
+    margin-bottom: 2rem;
+}
+
+
+
+/* ****************** */
+/* E. BLOG PAGINA CSS */
+/* ****************** */
+.blog .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+.blog .flex-container section {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 0 1rem 1rem 0;
+    padding: 1.5rem;
+    flex-grow: 1;
+    min-width: 400px;
+    background: #f5f5f5;
+}
+@media only screen and (min-width: 1230px) { 
+    .blog .flex-container section {
+        max-width: calc(50% - 1rem);
+    }
+}
+.blog .flex-container figure {
+    margin: 0;
+}
+.blog .flex-container figcaption {
+    margin: 0.75rem 0;
+    line-height: 1.5rem;
+}
+.blog .flex-container figure > a {
+    border-bottom: 0;
+}
+.blog .flex-container section img {
+    width: 100%;
+} 
+.blog .flex-container h4 {
+    text-transform: unset;
+    font-size: 1.70rem;
+    line-height: 2rem;
+    margin: 0 0 1rem;
+}
+.blog .flex-container a {
+    align-self: stretch;
+    text-align: center;
+}
+.blog aside section {
+    background: #fdfdfd;
+}
+.blog aside section h3 {
+    background: #f5f5f5;
+    padding: 0.75rem 1rem;
+}
+.blog aside section form {
+    padding: 1rem;
+}
+.blog aside section form label {
+    display: none;
+}
+.blog aside section form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
