@@ -5,8 +5,6 @@ Auteur: Seppe Gadeyne - seppe.gadeyne@student.kdg.be
 Auteur URL: https://www.linkedin.com/in/seppegadeyne/
 Versie: 1.0
 */
-/* Website mag maximum 10MB zijn gezipt - Gebruik voor de FAQ DL / DT / DD / DFN - Formulier posten op html met GET methode - Op alle subpagina's een breadcrumb (excl. home) */
-
 
 /* ************************************************************* */
 /* A. GLOBALE INSTELLINGEN OP ELKE PAGINA                        */
@@ -24,14 +22,18 @@ Versie: 1.0
 /* ************************************************************* */
 /* E. FAQ PAGINA CSS                                             */
 /* ************************************************************* */
+/* F. BLOG PAGINA CSS                                            */
+/* ************************************************************* */
 
 
-/* ------------------------ */
-/* 1. Algemene instellingen */
-/* ------------------------ */
 
-/* Globale instellingen tekst en scherm */
-/* ------------------------------------ */
+/* ************************************************************* */
+/* A. GLOBALE INSTELLINGEN OP ELKE PAGINA                        */
+/* ************************************************************* */
+/* 1. Algemene instellingen                                      */
+/* ************************************************************* */
+/* Globale instellingen tekst en scherm                          */
+/* ************************************************************* */
 html, body {
     font-family: Helvetica, Arial, sans-serif;
     color: #333333;
@@ -56,9 +58,8 @@ p {
 ol, ul {
     line-height: 1.7rem;
 }
-
-/* Titels algemene instellingen */
-/* ---------------------------- */
+/* Titels algemene instellingen                                  */
+/* ************************************************************* */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     color: #333333;
@@ -68,9 +69,8 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 
 }
-
-/* Knoppen en formulieren */
-/* ---------------------- */
+/* Knoppen en formulieren                                        */
+/* ************************************************************* */
 .fields {
     font: 400 1rem Helvetica;
     padding: 0.5rem;
@@ -111,9 +111,8 @@ input[type="submit"]:hover,
     color: #002f41;
     border-bottom: 4px solid #002f41;
 }
-
-/* Helpers */
-/* ------- */
+/* Helpers                                                       */
+/* ************************************************************* */
 .hide {
     position: absolute;
     width: 1px;
@@ -123,12 +122,12 @@ input[type="submit"]:hover,
 }
 
 
-/* ------------------------------------------------------------- */
+/* ************************************************************* */
 /* 2. Hoofd lay-out van de pagina gebruik makend van Grid Layout */
-/* ------------------------------------------------------------- */
-
-/* Hoofd lay-out declaratie van de hoogte van de rijen navigatie, billboard, pagina en footer */
-/* ------------------------------------------------------------------------------------------ */
+/* ************************************************************* */
+/* Hoofd lay-out declaratie van de hoogte van de rijen           */
+/* navigatie, billboard, pagina en footer                        */
+/* ************************************************************* */
 @media only screen and (min-width: 720px) {
     .page-with-billboard {
         display: grid; 
@@ -149,9 +148,8 @@ input[type="submit"]:hover,
         grid-template-rows: 150px 1fr 250px;
     }
 }
-
-/* Hoofd lay-out van de geneste Grid Layout, de kolom instellingen */
-/* --------------------------------------------------------------- */
+/* Hoofd lay-out van de  Grid Layout, de kolom instellingen      */
+/* ************************************************************* */
 @media only screen and (min-width: 720px) {
     body > header,
     body > main,
@@ -200,12 +198,11 @@ body.blog > main > aside {
 }
 
 
-/* -------------------------------------------- */
-/* 3. Header omvat logo, navigatie en billboard */
-/* -------------------------------------------- */
-
-/* Opmaak Grid lay-out voor de navigatie  */
-/* -------------------------------------- */
+/* ************************************************************* */
+/* 3. Header omvat logo, navigatie en billboard                  */
+/* ************************************************************* */
+/* Opmaak Grid lay-out voor de navigatie                         */
+/* ************************************************************* */
 @media only screen and (min-width: 720px) {
     .navigation section {
         grid-column-start: 2;
@@ -244,13 +241,12 @@ body.blog > main > aside {
         align-self: end;
     }
 }
-
 .page-without-billboard > .navigation {
     box-shadow: 0 1px 10px rgba(0,0,0,0.10);
 }
 
-/* Opmaak van het hoofdmenu met geneste Flexbox */
-/* -------------------------------------------- */
+/* Opmaak van het hoofdmenu met geneste Flexbox                  */
+/* ************************************************************* */
 .menu {
     display: flex;
     justify-content: flex-start;
@@ -298,8 +294,8 @@ body.blog > main > aside {
     border-bottom: 2px solid #0099cc;
 }
 
-/* Opmaak van het submenu welke volledige breedte omvat met Flexbox */
-/* ---------------------------------------------------------------- */
+/* Opmaak submenu welke volledige breedte omvat met Flexbox      */
+/* ************************************************************* */
 .menu > li > ul {
     display: flex;
     flex-wrap: wrap;
@@ -377,9 +373,8 @@ body.blog > main > aside {
     color: #0099cc;
 }
 
-/* Hero billboard */
-/* -------------- */
-/* Meerdere headers, zie http://html5doctor.com/the-header-element/ */
+/* Hero billboard                                                */
+/* ************************************************************* */
 @media only screen and (min-width: 720px) {
     .billboard {
         background: #eadfdd url("../media/versa2-fall-2019-bg.jpg") no-repeat center;
@@ -404,9 +399,9 @@ body.blog > main > aside {
 }
 
 
-/* --------- */
-/* 4. Footer */
-/* --------- */
+/* ************************************************************* */
+/* 4. Footer                                                     */
+/* ************************************************************* */
 .footer {
     background: #f5f5f5;
 }
@@ -465,10 +460,9 @@ body.blog > main > aside {
 }
 
 
-
-/* ***************** */
-/* B. Homepagina CSS */
-/* ***************** */
+/* ************************************************************* */
+/* B. Homepagina CSS                                             */
+/* ************************************************************* */
 
 .home .flex-container {
     display: flex;
@@ -539,9 +533,9 @@ body.blog > main > aside {
 
 
 
-/* ************************* */
-/* C. PRODUCTEN PAGINA'S CSS */
-/* ************************* */
+/* ************************************************************* */
+/* C. PRODUCTEN PAGINA'S CSS                                     */
+/* ************************************************************* */
 
 .shop aside > ul {
     display: flex;
@@ -665,9 +659,9 @@ body.blog > main > aside {
 
 
 
-/* ********************* */
-/* D. CONTACT PAGINA CSS */
-/* ********************* */
+/* ************************************************************* */
+/* D. CONTACT PAGINA CSS                                         */
+/* ************************************************************* */
 
 .contact .grid-container {
     display: grid;
@@ -709,9 +703,9 @@ body.blog > main > aside {
 
 
 
-/* ***************** */
-/* E. FAQ PAGINA CSS */
-/* ***************** */
+/* ************************************************************* */
+/* E. FAQ PAGINA CSS                                             */
+/* ************************************************************* */
 
 .faq dl {
     display: flex;
@@ -735,9 +729,10 @@ body.blog > main > aside {
 
 
 
-/* ****************** */
-/* E. BLOG PAGINA CSS */
-/* ****************** */
+/* ************************************************************* */
+/* F. BLOG PAGINA CSS                                            */
+/* ************************************************************* */
+
 .blog .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -856,4 +851,59 @@ body.blog > main > aside {
 .blogpost article footer.author img {
     width: 100%;
     border-radius: 50%;
+}
+
+
+
+/* ************************************************************* */
+/* G. WINKELMAND                                                 */
+/* ************************************************************* */
+
+.basket table {
+    font-family: Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-spacing: 0;
+}
+.basket td, th {
+    border: 1px solid #cccccc;
+    text-align: left;
+    padding: 0.5rem;
+}
+.basket td a {
+    border: 0;
+}
+.basket tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+.basket tr {
+    border-left: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+.basket .grid-cell {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    border: 0;
+}
+.basket .grid-cell img {
+    width: 100%;
+}
+/* Geen tijd om volledig responsieve winkelmand uit te werken */
+@media only screen and (max-width: 760px) { 
+    .basket .grid-cell img,
+    .basket .grid-cell ul {
+        display: none;
+    }
+}
+.basket input[type="number"] {
+    width: 2rem;
+}
+.basket tfoot td {
+    text-align: right;
+    font-weight: bold;
+}
+.basket .align-right {
+    text-align: right;
+    width: 100%;
 }
