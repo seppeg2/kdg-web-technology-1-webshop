@@ -801,3 +801,59 @@ body.blog > main > aside {
     grid-template-columns: 1fr;
     grid-gap: 1rem;
 }
+.blogpost article h2 {
+    text-transform: unset;
+    font-size: 2rem;
+    line-height: 2.25rem;
+}
+.blogpost article figure {
+    margin: 2rem 0;
+}
+.blogpost article img {
+    width: 100%;
+}
+.blogpost article {
+    column-count: 2;
+    column-gap: 4rem;
+}
+@media only screen and (max-width: 760px) { 
+    .blogpost article {
+        column-count: unset;
+    }
+}
+.blogpost article q {
+    font-style: italic;
+}
+.blogpost hr {
+    width: 5vw;
+    margin: 2rem 0;
+    border: 3px solid #002f41;
+}
+.blogpost article footer:first-of-type {
+    margin-top: 2rem;
+    font-style: italic;
+    font-size: 0.90rem;
+    color: #666666;
+    line-height: 1.5rem;
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+    padding: 1rem 1.5rem;
+}
+.blogpost article footer.author {
+    font-size: 0.90rem;
+}
+.blogpost article footer.author p {
+    margin-top: 0;
+}
+.blogpost article footer.author {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+
+}
+.blogpost article footer.author img {
+    width: 100%;
+    border-radius: 50%;
+}
