@@ -663,9 +663,6 @@ body > main > article {
 .contact .grid-container > header {
     grid-column-start: span 2;
 }
-.contact .grid-container section {
-
-}
 .contact .grid-container form label {
     display: none;
 }
