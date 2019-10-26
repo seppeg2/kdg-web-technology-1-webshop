@@ -24,6 +24,8 @@ Versie: 1.0
 /* ************************************************************* */
 /* F. BLOG PAGINA CSS                                            */
 /* ************************************************************* */
+/* H. PERSONALISEER                                              */
+/* ************************************************************* */
 
 
 
@@ -906,4 +908,56 @@ body.blog > main > aside {
 .basket .align-right {
     text-align: right;
     width: 100%;
+}
+
+
+
+/* ************************************************************* */
+/* H. PERSONALISEER                                              */
+/* ************************************************************* */
+
+.customize main {
+    grid-template-columns: 1fr 1fr;
+}
+.customize main > aside,
+.customize main > article {
+    grid-column-start: unset;
+    grid-column-end: unset;
+}
+.customize main > aside {
+    margin: 0;
+    min-height: 800px;
+    background: url('../media/personaliseer/personaliseer-tool.jpg') center no-repeat;
+    background-size: cover;
+}
+.customize main > article {
+    margin: 2rem;
+}
+@media only screen and (max-width: 760px) { 
+    .customize main {
+        grid-template-columns: 1fr;
+    }
+    .customize main > aside {
+        display: none;
+    }
+}
+.customize article fieldset {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    color: #333333;
+    border: 1px solid #cccccc;
+}
+.customize .grid-layout {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-gap: 0.75rem;
+    align-items: center;
+}
+.customize article textarea {
+    width: 97%;
+}
+.customize .flex-layout {
+    display: flex;
+    justify-content: space-between;
+
 }
